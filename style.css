@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --nutmeg: hsl(14, 45%, 36%);
+  --dark-raspberry: hsl(332, 51%, 32%);
+  --white: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Young Serif", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  @media screen and (min-width: 600px) {
+    padding: 2rem;
+    background-color: var(--eggshell);
+  }
+}
+
+p {
+  line-height: 1.6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* General styles */
+.omelette-recipe {
+  gap: 2rem;
+  display: grid;
+
+  @media screen and (min-width: 600px) {
+    width: 85%;
+    margin: auto;
+    padding: 2rem;
+    max-width: 1000px;
+    border-radius: 1rem;
+    background-color: var(--white);
+  }
+
+  > *:not(img) {
+    @media screen and (max-width: 599px) {
+      padding-inline: 1rem;
+    }
+  }
+
+  & ol ::marker {
+    font-weight: 600;
+  }
+
+  & ol,
+  & ul {
+    gap: 0.5rem;
+    display: grid;
+    padding-left: 1rem;
+
+    @media screen and (min-width: 600px) {
+      padding-left: 2rem;
+    }
+  }
+
+  & li {
+    line-height: 1.5;
+    padding-left: 0.5rem;
+
+    & span {
+      font-weight: 600;
+      color: var(--dark-charcoal);
+    }
+
+    @media screen and (min-width: 600px) {
+      padding-left: 1.5rem;
+    }
+  }
+
+  & section h2 {
+    margin-bottom: 1rem;
+  }
+
+  & section h2:not(.preparation h2) {
+    font-weight: 500;
+    color: var(--nutmeg);
+
+    + ul ::marker,
+    + ol ::marker {
+      color: var(--nutmeg);
+    }
+  }
+
+  & section:not(.preparation):not(.ingredients):not(.nutrition) {
+    border-bottom: 2px solid var(--light-grey);
+  }
+
+  & p,
+  & li,
+  & td
+  & caption {
+    color: var(--dark-charcoal);
+  }
+}
+
+img {
+  @media screen and (min-width: 600px) {
+    border-radius: 1rem;
+  }
+}
+
+header {
+  & h2 {
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+
+  & p {
+    margin-block-start: 0.5rem;
+  }
+}
+
+.preparation {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--rose-white);
+
+  & h2 {
+    font-size: 0.9rem;
+    color: var(--dark-raspberry);
+    font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+.instructions {
+  padding-bottom: 2rem;
+}
+
+.ingredients {
+  padding-block: 2rem;
+}
+
+.nutrition {
+  & caption {
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  & tr {
+    border-bottom: 2px solid var(--light-grey);
+  }
+
+  & tr:last-of-type {
+    border-bottom: none;
+  }
+
+  & th,
+  & td {
+    padding-block: 1rem;
+  }
+
+  & th {
+    text-align: left;
+    color: var(--nutmeg);
+  }
+}
+
